@@ -4,6 +4,10 @@ using Common_DLL;
 using System.Windows.Controls;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Collections.ObjectModel;
+using System;
+using System.Collections.Specialized;
 
 namespace Notities
 {
@@ -12,34 +16,56 @@ namespace Notities
     /// </summary>
     public partial class MainWindow : Window
     {
-
+        ObservableCollection<Notitie.Categorie> LijstCategorie = new ObservableCollection<Notitie.Categorie>();
         public List<Notitie.Categorie> ListCategorie = new List<Notitie.Categorie>();
 
         public MainWindow()
         {
             InitializeComponent();
-           
-            
+
+            LijstCategorie.CollectionChanged += LijstCategorie_CollectionChanged;
+
+        }
+
+        private void LijstCategorie_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            switch (e.Action)
+            {
+                case NotifyCollectionChangedAction.Add:
+                    
+                    foreach (Notitie.Categorie cat in e.NewItems) {
+                        TreeViewItem CategorieItem = new TreeViewItem();
+                        CategorieItem.Header = cat.Titel;
+                        Notitie.Categorie Categorie = new Notitie.Categorie(CategorieItem.Header.ToString());
+                        CategorieItem.Tag = Categorie;
+                        CategorieLijst.Items.Add(CategorieItem);
+                    }
+                    
+                    break;
+                case NotifyCollectionChangedAction.Remove:
+
+                    foreach (Notitie.Categorie cat in e.NewItems)
+                    {
+                        CategorieLijst.Items.Remove(CategorieLijst.SelectedItem);
+                    }
+
+                    break;
+                case NotifyCollectionChangedAction.Replace:
+                    break;
+            }
         }
 
         private void btnNewCategory_Click(object sender, RoutedEventArgs e)
         {
-            TreeViewItem CategorieItem = new TreeViewItem();
-            CategorieItem.Header = "test";
-            
-            Notitie.Categorie Categorie = new Notitie.Categorie(CategorieItem.Header.ToString());
-            CategorieItem.Tag = Categorie;
-            CategorieLijst.Items.Add(CategorieItem);
-      
-            ListCategorie.Add(Categorie);
+            Notitie.Categorie categorie = new Notitie.Categorie("Test");
+            LijstCategorie.Add(categorie);
         }
-
 
         private void btnDeleteCategory_Click(object sender, RoutedEventArgs e)
         {
-            CategorieLijst.Items.Remove(CategorieLijst.SelectedItem);
             TreeViewItem selectedcategory = (TreeViewItem)CategorieLijst.SelectedItem;
-            ListCategorie.Remove((Notitie.Categorie)selectedcategory.Tag);
+            Notitie.Categorie categorie = (Notitie.Categorie)selectedcategory.Tag;
+            LijstCategorie.Remove(categorie);
         }
 
 
