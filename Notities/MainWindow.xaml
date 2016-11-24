@@ -1,0 +1,111 @@
+﻿<Window x:Class="Notities.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Notities"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="800" Background="#FF70C1B3"
+        Name="window" Width="915.05">
+    <Grid
+        Background="#247BA0"
+        >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition 
+                Name="column1"
+                Width="300"
+                ></ColumnDefinition>
+            <ColumnDefinition
+                Name="column2"
+                Width="149.03"
+                ></ColumnDefinition>
+            <ColumnDefinition Width="151.97"/>
+            <ColumnDefinition
+                Name="column3"
+                Width="300"
+                ></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition
+                Name="row1"
+                Height="30"
+                />
+            <RowDefinition
+                Name="row2"
+                Height="*"
+                />
+            <RowDefinition
+                Name="row3"
+                Height="40"                
+                />
+            <RowDefinition
+                Name="row4"
+                Height="10"
+                />
+        </Grid.RowDefinitions>
+
+        <Grid 
+            Grid.Row="0"
+            Grid.ColumnSpan="4"
+            >
+            <ToolBar 
+            x:Name="toolBar" 
+            VerticalAlignment="Top"
+            Height="auto"
+            Width="{Binding ActualWidth, ElementName=window}"
+            HorizontalAlignment="Left"
+            Background="#FF70C1B3"
+                 >
+                <Button Content="test"/>
+                <Button Content="test"/>
+                <Button Content="test"/>
+                <Button Content="test"/>
+            </ToolBar>
+        </Grid>
+
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="29*"/>
+                <RowDefinition Height="660*"/>
+            </Grid.RowDefinitions>
+            <Label Content="&#xD;&#xA;Categorieën" Grid.RowSpan="2"></Label>
+            <TreeView
+                Width="auto"
+                Background="#B2DBBF"
+                Margin="10,23.381,10,15" Grid.Row="1"
+                Name="CategorieLijst" SelectedItemChanged="CategorieLijst_SelectedItemChanged"
+            />
+            
+            <TreeView 
+                Width="auto"
+                Background="#B2DBBF"
+                Margin="306,23,-286,15"
+                Grid.Row="1"
+                Name="NotesLijst" MouseDoubleClick="NotesLijst_MouseDoubleClick"
+            >
+               
+            </TreeView>
+            <TextBox 
+                IsEnabled="False"
+                Width="auto"
+                Background="#B2DBBF"
+                Margin="606,23,-586,15" Grid.Row="1"
+                Name="NotitieTextBox" TextChanged="NotitieTextBox_TextChanged"
+            />
+        </Grid>
+
+        <Grid Grid.Row="2">
+            <Button x:Name="btnNewCategory" Content="New category" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Height="40" Margin="10,0,0,0" Click="btnNewCategory_Click" Background="#FF6CB97E"/>
+            <Button x:Name="btnDeleteCategory" Content="Delete category" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Height="40" Margin="171,0,0,0" Click="btnDeleteCategory_Click" Background="#FFF3645D"/>
+            <Button x:Name="btnNewNote" Content="New note" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Height="40" Margin="307,0,-126,0" Click="btnNewNote_Click" Background="#FF6CB97E"/>
+            <Button x:Name="btnDeleteNote" Content="Delete note" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Height="40" Margin="467,0,-286,0" Click="btnDeleteNote_Click" Background="#FFF3645D"/>
+        </Grid>
+
+
+
+
+
+    </Grid>
+</Window>

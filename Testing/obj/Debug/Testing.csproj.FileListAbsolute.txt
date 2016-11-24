@@ -1,0 +1,6 @@
+E:\Google Drive\ODISEE 2016-2017\Application Development 3\Notities\Notities\Testing\bin\Debug\Testing.exe.config
+E:\Google Drive\ODISEE 2016-2017\Application Development 3\Notities\Notities\Testing\bin\Debug\Testing.exe
+E:\Google Drive\ODISEE 2016-2017\Application Development 3\Notities\Notities\Testing\bin\Debug\Testing.pdb
+E:\Google Drive\ODISEE 2016-2017\Application Development 3\Notities\Notities\Testing\obj\Debug\Testing.csprojResolveAssemblyReference.cache
+E:\Google Drive\ODISEE 2016-2017\Application Development 3\Notities\Notities\Testing\obj\Debug\Testing.exe
+E:\Google Drive\ODISEE 2016-2017\Application Development 3\Notities\Notities\Testing\obj\Debug\Testing.pdb
