@@ -1,15 +1,15 @@
 use WpfData
 go
 
-IF EXISTS( select * from sys.views where name = 'notities')
+IF EXISTS( select * from sys.tables where name = 'notitie')
 begin
-	drop table notities;
+	drop table notitie;
 end
 go
 
 
 
-CREATE TABLE dbo.Sample_Table
+CREATE TABLE dbo.notitie
 (
     id int identity(1,1) NOT NULL,
     titel varchar(50) NOT NULL,
@@ -18,9 +18,9 @@ CREATE TABLE dbo.Sample_Table
 
 go 
 
-IF EXISTS( select * from sys.views where name = 'notities')
+IF EXISTS( select * from sys.tables where name = 'categorie')
 begin
-	drop table notities;
+	drop table categorie;
 end
 
 go
@@ -29,5 +29,5 @@ go
 CREATE TABLE dbo.categorie
 (
     id int identity(1,1) NOT NULL,
-    column_2 int NULL
+    titel int NULL
 );
