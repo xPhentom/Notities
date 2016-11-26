@@ -12,6 +12,8 @@ Werkt:
 - Je kan notities toevoegen aan categorieën
 - Je kan de notities bewerken
 - Je kan zowel de categorieën als notities verwijderen
+- Je kan de naam van zowel de notitie als categorie veranderen
+- Alles wordt meteen geupdate naar de database
 
 
 Werkt niet (zoals het moet):
