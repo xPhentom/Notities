@@ -148,9 +148,6 @@ namespace Notities
                     }
 
                     break;
-                case NotifyCollectionChangedAction.Replace:
-                    MessageBox.Show("replaced00");
-                    break;
             }
         }
 
@@ -255,6 +252,7 @@ namespace Notities
         {
 
             var selectedcategory = (TreeViewItem) CategorieLijst.SelectedItem;
+            if (selectedcategory == null) return;
             Categorie categorie = (Categorie) selectedcategory.Tag;
             
             var indexof = _lijstCategorie.IndexOf(categorie);
@@ -277,6 +275,7 @@ namespace Notities
         private void btnDeleteNote_Click(object sender, RoutedEventArgs e)
         {
             var selectedcategorie = (TreeViewItem) CategorieLijst.SelectedItem;
+            if (selectedcategorie == null) return;
             var cat = (Categorie) selectedcategorie.Tag;
 
             var selectednote = (TreeViewItem) NotesLijst.SelectedItem;
@@ -389,6 +388,7 @@ namespace Notities
         {
             
             TreeViewItem selectedtree = (TreeViewItem)CategorieLijst.SelectedItem;
+            if (selectedtree == null) return;
             selectedtree.Header = categorytext.Text;
             Categorie cat = (Categorie)selectedtree.Tag;
             var indexOf = _lijstCategorie.IndexOf(cat);
@@ -398,6 +398,7 @@ namespace Notities
         private void changenotetext_click(object sender, RoutedEventArgs e)
         {
             TreeViewItem selectedtree = (TreeViewItem)CategorieLijst.SelectedItem;
+            if (selectedtree == null) return;
             Categorie cat = (Categorie)selectedtree.Tag;
             TreeViewItem selectednote = (TreeViewItem) NotesLijst.SelectedItem;
             selectednote.Header = notetext.Text;

@@ -4,6 +4,8 @@
 
 Voor u dit project een laat runnen laat je het best het script eens runnen dat je kan vinden onder SQLScripts.
 
+Voor de knoppen bovenaan het scherm moet je wel een dubbele klik doen, voor het geval je nog geen directe resultaat ziet.
+
 ## Uitleg
 
 Werkt:
