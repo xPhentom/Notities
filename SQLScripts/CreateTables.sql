@@ -9,11 +9,12 @@ go
 
 
 
-CREATE TABLE dbo.notitie
+CREATE TABLE dbo.notitie	
 (
-    id int identity(1,1) NOT NULL,
+    id int identity(1,1) NOT NULL primary key,
     titel varchar(50) NOT NULL,
-	tekst varchar(50) NULL
+	tekst varchar(400) NULL,
+	cat_id int NOT NULL
 );
 
 go 
@@ -28,6 +29,10 @@ go
 
 CREATE TABLE dbo.categorie
 (
-    id int identity(1,1) NOT NULL,
-    titel int NULL
+    id int identity(1,1) NOT NULL primary key,
+    titel varchar(50) NOT NULL
 );
+
+go
+
+alter table notitie add constraint fk_categorie foreign key (cat_id )references categorie(id)

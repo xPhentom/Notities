@@ -1,34 +1,43 @@
 ﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using Common_DLL;
 
 namespace Notitie
 {
-    public class Categorie
+    public class Categorie : ObservableObject
     {
 
-        public List<Notitie> NotitieLijst = new List<Notitie>();
+        public int Id { get; set; }
+
+        //public bool Created { get; set; }//Verschil maken tussen het aanmaken van een object en het veranderen van een object
+
+        public ObservableCollection<Notitie> NotitieLijst = new ObservableCollection<Notitie>();
 
         private string _titel;
 
-        public string Titel
-        {
+        public string Titel {
             get { return _titel; }
-            set { _titel = value; }
+            set
+            {
+                if (Titel != value)
+                {
+                    onPropertyChanged(Id, value, "categorietitel");
+                }
+            }
         }
 
-        private string _wijzigingsdatum;
+        public string WijzigingsDatum { get; set; }
 
-        public string WijzigingsDatum
+
+        public Categorie(int id, string titel)
         {
-            get { return _wijzigingsdatum; }
-            set { _wijzigingsdatum = value; }
+            _titel = titel;
+            Id = id;
         }
-       
-
 
         public Categorie(string titel)
         {
-            Titel = titel;
-            
+            _titel = titel;
         }
 
     }

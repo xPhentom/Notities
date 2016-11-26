@@ -7,105 +7,68 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="800" Background="#FF70C1B3"
         Name="window" Width="915.05">
-    <Grid
-        Background="#247BA0"
-        >
+    <Grid Background="#247BA0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*">
+
+            </RowDefinition>
+            <RowDefinition Height="11*">
+                
+            </RowDefinition>
+            <RowDefinition Height="1*">
+
+            </RowDefinition>
+        </Grid.RowDefinitions>
+        
         <Grid.ColumnDefinitions>
-            <ColumnDefinition 
-                Name="column1"
-                Width="300"
-                ></ColumnDefinition>
-            <ColumnDefinition
-                Name="column2"
-                Width="149.03"
-                ></ColumnDefinition>
-            <ColumnDefinition Width="151.97"/>
-            <ColumnDefinition
-                Name="column3"
-                Width="300"
-                ></ColumnDefinition>
+            <ColumnDefinition Width="1*">
+                
+            </ColumnDefinition>
+            <ColumnDefinition Width="1*">
+
+            </ColumnDefinition>
+            <ColumnDefinition Width="1*">
+
+            </ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <Grid.RowDefinitions>
-            <RowDefinition
-                Name="row1"
-                Height="30"
-                />
-            <RowDefinition
-                Name="row2"
-                Height="*"
-                />
-            <RowDefinition
-                Name="row3"
-                Height="40"                
-                />
-            <RowDefinition
-                Name="row4"
-                Height="10"
-                />
-        </Grid.RowDefinitions>
+        <Label Content="Categorieën" Grid.Row="0"></Label>
 
-        <Grid 
-            Grid.Row="0"
-            Grid.ColumnSpan="4"
-            >
-            <ToolBar 
-            x:Name="toolBar" 
-            VerticalAlignment="Top"
-            Height="auto"
-            Width="{Binding ActualWidth, ElementName=window}"
-            HorizontalAlignment="Left"
-            Background="#FF70C1B3"
-                 >
-                <Button Content="test"/>
-                <Button Content="test"/>
-                <Button Content="test"/>
-                <Button Content="test"/>
-            </ToolBar>
-        </Grid>
+        <TextBox Name="categorytext" Margin="10,5,5,5" Grid.Row="0" Grid.Column="1" Width="120" Height="30" HorizontalAlignment="left"/>
+        <Button  HorizontalAlignment="Right" Content="Verander categorienaam" Grid.Row="0" Grid.Column="1" Name="changecategorytext" Margin="10,5,5,5" Click="changecategorytext_Click" ></Button>
+        <TextBox x:Name="notetext" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Left" Margin="10,5,5,5" Width="120" Height="30"/>
+        <Button x:Name="changenotetext" HorizontalAlignment="Right" Grid.Row="0" Grid.Column="2" Content="Verander notitienaam"  Margin="10,5,5,5" Click="changenotetext_click" />
 
 
-        <Grid Grid.Row="1">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="29*"/>
-                <RowDefinition Height="660*"/>
-            </Grid.RowDefinitions>
-            <Label Content="&#xD;&#xA;Categorieën" Grid.RowSpan="2"></Label>
-            <TreeView
-                Width="auto"
+        <TreeView
+                
                 Background="#B2DBBF"
-                Margin="10,23.381,10,15" Grid.Row="1"
+                Margin="10,10,10,10" Grid.Row="1" Grid.Column="0"
                 Name="CategorieLijst" SelectedItemChanged="CategorieLijst_SelectedItemChanged"
             />
-            
-            <TreeView 
+
+        <TreeView 
                 Width="auto"
                 Background="#B2DBBF"
-                Margin="306,23,-286,15"
-                Grid.Row="1"
+                Margin="10,10,10,10"
+                Grid.Row="1" Grid.Column="1"
                 Name="NotesLijst" MouseDoubleClick="NotesLijst_MouseDoubleClick"
-            >
-               
-            </TreeView>
-            <TextBox 
+            />
+        <TextBox 
                 IsEnabled="False"
                 Width="auto"
                 Background="#B2DBBF"
-                Margin="606,23,-586,15" Grid.Row="1"
+                Margin="10,10,10,10" Grid.Row="1" Grid.Column="2"
                 Name="NotitieTextBox" TextChanged="NotitieTextBox_TextChanged"
             />
-        </Grid>
 
-        <Grid Grid.Row="2">
-            <Button x:Name="btnNewCategory" Content="New category" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Height="40" Margin="10,0,0,0" Click="btnNewCategory_Click" Background="#FF6CB97E"/>
-            <Button x:Name="btnDeleteCategory" Content="Delete category" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Height="40" Margin="171,0,0,0" Click="btnDeleteCategory_Click" Background="#FFF3645D"/>
-            <Button x:Name="btnNewNote" Content="New note" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Height="40" Margin="307,0,-126,0" Click="btnNewNote_Click" Background="#FF6CB97E"/>
-            <Button x:Name="btnDeleteNote" Content="Delete note" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Height="40" Margin="467,0,-286,0" Click="btnDeleteNote_Click" Background="#FFF3645D"/>
-        </Grid>
+        <Button x:Name="btnNewCategory" Grid.Row="2" Grid.Column="0" Content="New category" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Height="40" Margin="10,5,5,5" Click="btnNewCategory_Click" Background="#FF6CB97E"/>
+        <Button x:Name="btnDeleteCategory" Grid.Row="2" Grid.Column="0" Content="Delete category" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Height="40"   Margin="170,5,5,5" Click="btnDeleteCategory_Click" Background="#FFF3645D"/>
+        <Button x:Name="btnNewNote" Grid.Row="2" Grid.Column="1" Content="New note" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Height="40" Margin="10,5,5,5" Click="btnNewNote_Click" Background="#FF6CB97E"/>
+        <Button x:Name="btnDeleteNote" Grid.Row="2" Grid.Column="1" Content="Delete note" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Height="40" Margin="170,5,5,5" Click="btnDeleteNote_Click" Background="#FFF3645D"/>
+        <Label Name="lblStatus" HorizontalContentAlignment="Right" VerticalContentAlignment="Bottom" Content="status" Grid.Row="2" Grid.Column="3"></Label>
 
 
-
-
-
+        
     </Grid>
 </Window>

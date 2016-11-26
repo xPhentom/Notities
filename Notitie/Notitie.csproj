@@ -44,6 +44,12 @@
     <Compile Include="Notitie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common_DLL\Common_DLL.csproj">
+      <Project>{57E9405B-9D64-4DDC-A09B-2C70E57FDC27}</Project>
+      <Name>Common_DLL</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

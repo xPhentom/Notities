@@ -16,3 +16,21 @@ E:\Google Drive\ODISEE 2016-2017\Application Development 3\Notities\Notities\Not
 E:\Google Drive\ODISEE 2016-2017\Application Development 3\Notities\Notities\Notities\obj\Debug\NotitieProgramma.csproj.GenerateResource.Cache
 E:\Google Drive\ODISEE 2016-2017\Application Development 3\Notities\Notities\Notities\obj\Debug\Notities.exe
 E:\Google Drive\ODISEE 2016-2017\Application Development 3\Notities\Notities\Notities\obj\Debug\Notities.pdb
+C:\Programming\Notities\Notities\bin\Debug\Notities.exe.config
+C:\Programming\Notities\Notities\obj\Debug\Notities.exe
+C:\Programming\Notities\Notities\obj\Debug\Notities.pdb
+C:\Programming\Notities\Notities\bin\Debug\Notities.exe
+C:\Programming\Notities\Notities\bin\Debug\Notities.pdb
+C:\Programming\Notities\Notities\bin\Debug\Common_DLL.dll
+C:\Programming\Notities\Notities\bin\Debug\Notitie.dll
+C:\Programming\Notities\Notities\bin\Debug\Common_DLL.pdb
+C:\Programming\Notities\Notities\bin\Debug\Notitie.pdb
+C:\Programming\Notities\Notities\obj\Debug\NotitieProgramma.csprojResolveAssemblyReference.cache
+C:\Programming\Notities\Notities\obj\Debug\MainWindow.g.cs
+C:\Programming\Notities\Notities\obj\Debug\App.g.cs
+C:\Programming\Notities\Notities\obj\Debug\Notities_MarkupCompile.cache
+C:\Programming\Notities\Notities\obj\Debug\Notities_MarkupCompile.lref
+C:\Programming\Notities\Notities\obj\Debug\MainWindow.baml
+C:\Programming\Notities\Notities\obj\Debug\Notities.g.resources
+C:\Programming\Notities\Notities\obj\Debug\Notities.Properties.Resources.resources
+C:\Programming\Notities\Notities\obj\Debug\NotitieProgramma.csproj.GenerateResource.Cache
